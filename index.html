@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> 
     <title>Personal Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,8 +17,8 @@
                 <!-- <h2>Mr . <span>Robot</span></h2> -->
                 <img src="images/logo (1).png" alt="">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">project</a></li>
                     <li><a href="#">Contact</a></li>
@@ -30,7 +31,7 @@
         </div>
     </div>
     <!-- ----------------ABOUT-------- -->
-    <dev class="about">
+    <dev class="about" id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
@@ -48,14 +49,89 @@
                         A wooden bed, which is an artifact made by a human,
                         cannot move, grow, or reproduce itself.</p>
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Experience</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('education')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI / UX </span><br>Desinging Web/App interfaces</li>
+                            <li><span>Web Developer </span><br>Web app Developer</li>
+                            <li><span>App Developer </span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current </span><br>Desinging Web/App interfaces</li>
+                            <li><span>2019 - 2021 </span><br>BBM from ISM Bangladddd</li>
+                            <li><span>2016 - 2017 </span><br>Building Android/ BBM from ISM Bangladddd iOS apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2016</span><br>Desinging Web/App interfaces</li>
+                            <li><span>2016 </span><br>BGM from ISM Bangladddd</li>
+                            <li><span>2014 </span><br>BBM from ISM Bangladddd</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </dev>
+    <!-- ------------------ SERVICES ------------------  -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>things and artifacts. According to Aristotle,
+                        the former have their principles of generation
+                        and motion inside, whereas the latter, insofar
+                        as they are artifacts, are generated only by
+                        outward causes. For example, animals, which
+                        are natural things, can grow, move, an</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h2>UI / UX Design</h2>
+                    <p>things and artifacts. According to Aristotle,
+                        the former have their principles of generation
+                        and motion inside, whereas the latter, insofar
+                        as they are artifacts, are generated only by
+                        outward causes. For example, animals, which
+                        are natural things, can grow, move, an</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-font-awesome"></i>
+                    <h2>APP Design</h2>
+                    <p>things and artifacts. According to Aristotle,
+                        the former have their principles of generation
+                        and motion inside, whereas the latter, insofar
+                        as they are artifacts, are generated only by
+                        outward causes. For example, animals, which
+                        are natural things, can grow, move, an</p>
+                        <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
-
 </html>
