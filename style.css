@@ -16,6 +16,17 @@ body{
     background-size: cover;
     background-position: center;
 }
+.logo{
+    text-decoration: 0;
+    color: #ff004f;
+    /*text-transform: uppercase;*/
+    font-weight: 700;
+    font-size: 1.8em;
+    transition: 0.5s;
+}
+.logo:hover{
+    color: #fff;
+}
 .container{
     padding: 10px 10%;
 }
